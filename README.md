@@ -67,20 +67,29 @@ Using the servlet with PHP fsockopen():
 $post = http_build_query(array('server' => $appServer, 'port' => $port, 'xml' => $xml));
 
 fwrite($httpSocket, "POST /jdebridge/JDEBridge HTTP/1.1\r\n");
+
 fwrite($httpSocket, "Host: {$tomcatHost}\r\n");
+
 fwrite($httpSocket, "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n");
+
 fwrite($httpSocket, "Accept-Encoding: \r\n");
+
 fwrite($httpSocket, "Content-Type: application/x-www-form-urlencoded\r\n");
+
 fwrite($httpSocket, "Content-Length: ".strlen($post)."\r\n");
+
 fwrite($httpSocket, "Connection: Close\r\n");
+
 fwrite($httpSocket, "\r\n");
 		
 fwrite($httpSocket, $post);
 
 $response = '';
+
 while( $line = fgets($httpSocket, 4096) ){
+
 	$response .= $line;
-	}
+	
+}
 
-$response = substr($response, strpos($response,"\r\n\r\n") + 4); // strip HTTP headers.  $response contains the full jdeResponse XML document.
-
+$response = substr($response, strpos($response,"\r\n\r\n") + 4); // strip HTTP headers.
