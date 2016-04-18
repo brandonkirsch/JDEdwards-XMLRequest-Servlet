@@ -52,10 +52,10 @@ EXAMPLES
 
 "GetTemplate" jdeRequestDocument - Returns jdeRequest XML template for the function named F3002BeginDocument
 
-<?xml version="1.0" encoding="UTF-8" ?>
-<jdeRequest user="JDEUSER" pwd="JDEPASS" role="*ALL" environment="JDEENV" type="callmethod">
-<callMethodTemplate name='F3002BeginDocument' app='XMLInterop' />
-</jdeRequest>
+	<?xml version="1.0" encoding="UTF-8" ?>
+	<jdeRequest user="JDEUSER" pwd="JDEPASS" role="*ALL" environment="JDEENV" type="callmethod">
+	<callMethodTemplate name='F3002BeginDocument' app='XMLInterop' />
+	</jdeRequest>
 
 
 Using the servlet with PHP fsockopen():
